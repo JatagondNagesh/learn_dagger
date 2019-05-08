@@ -28,10 +28,15 @@ public class HomeFragment extends Fragment {
         return new HomeFragment();
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getDependencies();
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        getDependencies();
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
